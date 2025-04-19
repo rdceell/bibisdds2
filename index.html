@@ -1,161 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Nós Dois 💖</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfólio da Bibi</title>
+    <style>
+        /* Estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    html, body {
-      height: 100%;
-      font-family: 'Arial', sans-serif;
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgb(20, 20, 20);
+            color: rgb(255, 255, 255);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-    .background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
+        /* Cabeçalho */
+        header {
+            background: rgb(30, 30, 30);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
-    .background img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: blur(15px) brightness(0.5);
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-    .background img.active {
-      opacity: 1;
-    }
+        header h1 {
+            font-size: 2.5rem;
+            color: rgb(50, 255, 255);
+        }
 
-    .content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 40px 20px;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
 
-    h1 {
-      font-size: 3.5rem;
-      color: rgb(255, 100, 200);
-      animation: pulse 2s infinite alternate;
-      margin-bottom: 20px;
-    }
+        nav ul li {
+            margin-left: 20px;
+        }
 
-    @keyframes pulse {
-      0% {
-        text-shadow: 0 0 10px rgb(255, 100, 200);
-      }
-      100% {
-        text-shadow: 0 0 30px rgb(255, 150, 230);
-      }
-    }
+        nav ul li a {
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
 
-    .phrase {
-      font-size: 1.4rem;
-      color: rgb(255, 200, 255);
-      margin-bottom: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+        nav ul li a:hover {
+            color: rgb(0, 255, 255);
+        }
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+        /* Seções */
+        .section {
+            padding: 50px 20px;
+        }
 
-    .gallery img,
-    .gallery video {
-      width: 250px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(255, 100, 200, 0.3);
-      transition: transform 0.3s ease;
-    }
+        .section h2 {
+            font-size: 2rem;
+            color: rgb(255, 255, 255);
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-    .gallery img:hover,
-    .gallery video:hover {
-      transform: scale(1.05);
-    }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
 
-    footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-  </style>
+        /* Seção de imagens e vídeos */
+        .imagem-video-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .imagem-video-container img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Formulário de contato */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        form input, form textarea {
+            padding: 12px;
+            background: rgb(30, 30, 30);
+            border: 1px solid rgb(0, 255, 255);
+            color: rgb(255, 255, 255);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        form button {
+            padding: 12px;
+            background: rgb(0, 255, 255);
+            color: rgb(20, 20, 20);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+        }
+
+        form button:hover {
+            background: rgb(0, 200, 200);
+        }
+
+        /* Rodapé */
+        footer {
+            background: rgb(10, 10, 10);
+            color: rgb(200, 200, 200);
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Slideshow de fundo -->
-  <div class="background">
-    <img src="fundo1.jpg" class="active" />
-    <img src="fundo2.jpg" />
-    <img src="fundo3.jpg" />
-  </div>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <h1>Saudades da Bibi</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#imagens">Imagens e Vídeos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Conteúdo principal -->
-  <div class="content">
-    <h1>Saudades da Bibi 💖</h1>
+    <!-- Seção Sobre -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2>Sobre Nós</h2>
+            <p>Este é o nosso cantinho especial! Uma forma de relembrar os melhores momentos e criar novas memórias.</p>
+        </div>
+    </section>
 
-    <div class="phrase">
-      <p>"Você é minha saudade preferida."</p>
-      <p>"Com você, cada dia é o melhor dia."</p>
-      <p>"Entre todas as estrelas, você é a que mais brilha pra mim."</p>
-    </div>
+    <!-- Seção de Imagens e Vídeos -->
+    <section id="imagens" class="section">
+        <div class="container">
+            <h2>Imagens e Vídeos</h2>
+            <div class="imagem-video-container">
+                <!-- Exemplo de imagem -->
+                <img src="imagens/foto1.jpg" alt="Nossa Foto 1">
+                <img src="imagens/foto2.jpg" alt="Nossa Foto 2">
+            </div>
+            <div class="imagem-video-container">
+                <!-- Exemplo de vídeo -->
+                <video controls>
+                    <source src="videos/video1.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+            </div>
+        </div>
+    </section>
 
-    <div class="gallery">
-      <img src="foto1.jpg" alt="Nós dois" />
-      <img src="foto2.jpg" alt="Momentos juntos" />
+    <!-- Seção de Contato -->
+    <section id="contato" class="section">
+        <div class="container">
+            <h2>Contato</h2>
+            <form>
+                <input type="text" name="nome" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu Email" required>
+                <textarea name="mensagem" placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
 
-      <video controls muted loop>
-        <source src="video1.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
-      </video>
-    </div>
-
+    <!-- Rodapé -->
     <footer>
-      <p>&copy; Feito com amor pra Bibi 💕</p>
+        <p>&copy; 2025 Saudades da Bibi. Todos os direitos reservados.</p>
     </footer>
-  </div>
-
-  <!-- Música do YouTube tocando automaticamente -->
-  <iframe 
-    width="0" 
-    height="0" 
-    src="https://youtu.be/Z5pWz_OR5Sg?si=QSAqFm7xAYU40Gfh" 
-    frameborder="0" 
-    allow="autoplay; encrypted-media" 
-    allowfullscreen>
-  </iframe>
-
-  <!-- Script do slideshow -->
-  <script>
-    const images = document.querySelectorAll('.background img');
-    let current = 0;
-
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 5000);
-  </script>
 
 </body>
 </html>
